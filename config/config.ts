@@ -152,7 +152,8 @@ export default defineConfig({
     strategy: 'normal',
   },
   requestRecord: {},
-  define:{
-    API_URL:'127.0.0.1'
-  }
+  define: {
+    API_URL: '127.0.0.1'
+  },
+  esbuildMinifyIIFE: true
 });
