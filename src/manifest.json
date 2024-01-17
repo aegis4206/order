@@ -1,0 +1,22 @@
+{
+  "name": "Order System",
+  "short_name": "Order System",
+  "display": "standalone",
+  "start_url": "./?utm_source=homescreen",
+  "theme_color": "#002140",
+  "background_color": "#001529",
+  "icons": [
+    {
+      "src": "restaurant.ico",
+      "sizes": "192x192"
+    },
+    {
+      "src": "restaurant.ico",
+      "sizes": "128x128"
+    },
+    {
+      "src": "restaurant.ico",
+      "sizes": "512x512"
+    }
+  ]
+}
