@@ -22,10 +22,40 @@ export async function getInitialState(): Promise<{
 }> {
   const fetchUserInfo = async () => {
     try {
-      const msg = await queryCurrentUser({
-        skipErrorHandler: true,
+      // const msg = await queryCurrentUser({
+      //   skipErrorHandler: true,
+      // });
+      return ({
+        name: 'aegis4206(White)',
+        avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+        userid: '00000001',
+        email: 'aegis4206@gmail.com',
+        signature: '',
+        title: '',
+        group: '',
+        tags: [
+          {
+            key: '0',
+            label: '',
+          },
+        ],
+        notifyCount: 12,
+        unreadCount: 11,
+        country: 'Taiwan',
+        access: 'admin',
+        geographic: {
+          province: {
+            label: '台灣',
+            key: '330000',
+          },
+          city: {
+            label: '台南',
+            key: '330100',
+          },
+        },
+        address: '安南',
+        phone: '0932-764101',
       });
-      return msg.data;
     } catch (error) {
       history.push(loginPath);
     }
@@ -91,11 +121,11 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     ],
     links: isDev
       ? [
-          // <Link key="openapi" to="/umi/plugin/openapi" target="_blank">
-          //   <LinkOutlined />
-          //   <span>OpenAPI 文档</span>
-          // </Link>,
-        ]
+        // <Link key="openapi" to="/umi/plugin/openapi" target="_blank">
+        //   <LinkOutlined />
+        //   <span>OpenAPI 文档</span>
+        // </Link>,
+      ]
       : [],
     menuHeaderRender: undefined,
     // 自定义 403 页面

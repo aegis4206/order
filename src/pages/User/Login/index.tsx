@@ -108,7 +108,37 @@ const Login: React.FC = () => {
       flushSync(() => {
         setInitialState((s) => ({
           ...s,
-          currentUser: userInfo,
+          currentUser: {
+            name: 'aegis4206(White)',
+            avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+            userid: '00000001',
+            email: 'aegis4206@gmail.com',
+            signature: '',
+            title: '',
+            group: '',
+            tags: [
+              {
+                key: '0',
+                label: '',
+              },
+            ],
+            notifyCount: 12,
+            unreadCount: 11,
+            country: 'Taiwan',
+            access: 'admin',
+            geographic: {
+              province: {
+                label: '台灣',
+                key: '330000',
+              },
+              city: {
+                label: '台南',
+                key: '330100',
+              },
+            },
+            address: '安南',
+            phone: '0932-764101',
+          },
         }));
       });
     }
