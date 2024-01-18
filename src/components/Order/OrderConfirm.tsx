@@ -16,6 +16,9 @@ interface DataType {
     title: string;
 }
 
+// api網址
+const API_URL = "https://backend-order-yar8.onrender.com"
+
 export default function OrderConfirm(props) {
     const { orderDrawerOpen, setOrderDrawerOpen, selectedRestaurant } = props
     const { orderList, setOrderList, orderSubmitList, setOrderSubmitList } = useModel('order')
@@ -160,7 +163,7 @@ export default function OrderConfirm(props) {
         // }
 
         //node.js api
-        await fetch(`${process.env.REACT_APP_API_URL}/api/orderList`, {
+        await fetch(`${API_URL}/api/orderList`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
