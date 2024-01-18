@@ -153,7 +153,9 @@ export default defineConfig({
   },
   requestRecord: {},
   define: {
-    API_URL: '127.0.0.1'
+    API_URL: 'https://backend-order-yar8.onrender.com',
   },
-  esbuildMinifyIIFE: true
+  esbuildMinifyIIFE: true,
+  // history: { type: 'hash' }
+  
 });
