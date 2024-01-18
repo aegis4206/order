@@ -160,7 +160,7 @@ export default function OrderConfirm(props) {
         // }
 
         //node.js api
-        await fetch(`${process.env.API_URL}/api/orderList`, {
+        await fetch(`${API_URL}/api/orderList`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -156,6 +156,6 @@ export default defineConfig({
     API_URL: 'https://backend-order-yar8.onrender.com',
   },
   esbuildMinifyIIFE: true,
-  // history: { type: 'hash' }
+  history: { type: 'hash' }
   
 });
