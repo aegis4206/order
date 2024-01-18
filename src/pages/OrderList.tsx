@@ -46,7 +46,7 @@ const Order: React.FC = () => {
   useEffect(() => {
 
     // 在客戶端建立 WebSocket 連線
-    const ws = new WebSocket(`ws://${WS_URL}`);
+    const ws = new WebSocket(`wss://${WS_URL}`);
 
     //firebase
     // const q = query(collection(getFirestore(firebaseApp), "Order"), orderBy('time', 'desc'));
