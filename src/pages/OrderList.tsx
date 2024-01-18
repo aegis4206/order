@@ -28,7 +28,7 @@ const Order: React.FC = () => {
 
 
   const fetchData = async () => {
-    const data = await fetch(`${API_URL}/api/orderList`, {
+    const data = await fetch(`${process.env.REACT_APP_API_URL}/api/orderList`, {
       method: 'GET',
     }).
       then((response) => {
@@ -43,7 +43,7 @@ const Order: React.FC = () => {
   useEffect(() => {
 
     // 在客戶端建立 WebSocket 連線
-    const ws = new WebSocket(`ws://${WS_URL}`);
+    const ws = new WebSocket(`ws://${process.env.REACT_APP_WS_URL}`);
 
     //firebase
     // const q = query(collection(getFirestore(firebaseApp), "Order"), orderBy('time', 'desc'));
@@ -97,7 +97,7 @@ const Order: React.FC = () => {
     // }
 
     //node.js api
-    await fetch(`${API_URL}/api/orderList/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/orderList/${id}`, {
       method: 'DELETE',
     }).then((response) => {
       if (!response.ok) {
