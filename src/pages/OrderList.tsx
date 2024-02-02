@@ -29,6 +29,12 @@ const Order: React.FC = () => {
   const [chart, setChart] = useState({})
   const [isLoading, setIsLoading] = useState(false)
 
+  const utcTimeSplitHandle = (utcDateTime: string) => {
+    const date_time = utcDateTime.split("T")
+    const date = date_time[0]
+    const time = date_time[1].split(".")[0]
+    return `${date} ${time}`
+  }
 
 
   const fetchData = async () => {
@@ -154,7 +160,7 @@ const Order: React.FC = () => {
       key: 'method',
       render: (_, text) => {
         // console.log(text.time)
-        const time = moment(text.time).format("YYYY-MM-DD HH:mm:ss").split(' ')
+        const time = utcTimeSplitHandle(text.time).split(' ')
         return <>
           <div>{text.selectedRestaurant}</div>
           <div>{time[0]}</div>
@@ -242,7 +248,7 @@ const Order: React.FC = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: reversed.map(i => moment(i.time).format("YYYY-MM-DD HH:mm:ss"))
+        data: reversed.map(i => utcTimeSplitHandle(i.time))
       },
       yAxis: {
         type: 'value'
