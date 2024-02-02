@@ -4,6 +4,7 @@ import { Card, theme, Button, Select, Tabs, FloatButton, Drawer, Table, Space, T
 import React, { useState, useRef, useEffect } from 'react';
 import { PlusCircleTwoTone, MinusCircleTwoTone, QuestionCircleOutlined } from '@ant-design/icons';
 import ReactECharts from 'echarts-for-react';
+import moment from 'moment';
 
 
 
@@ -82,7 +83,7 @@ const Order: React.FC = () => {
   }, [])
 
   const deleteHandle = async (id) => {
-    console.log(id)
+    // console.log(id)
 
     //firebase
     // try {
@@ -152,8 +153,8 @@ const Order: React.FC = () => {
       dataIndex: 'method',
       key: 'method',
       render: (_, text) => {
-        console.log(text.time)
-        const time = new Date(text.time).toLocaleString().split(' ')
+        // console.log(text.time)
+        const time = moment(text.time).format("YYYY-MM-DD HH:mm:ss").split(' ')
         return <>
           <div>{text.selectedRestaurant}</div>
           <div>{time[0]}</div>
@@ -169,14 +170,14 @@ const Order: React.FC = () => {
     },
   ]
   const expandedRowRender = (record, index) => {
-    console.log(record, index)
+    // console.log(record, index)
     const expandedRowRenderColumns = [
       {
         title: '品項',
         dataIndex: 'title',
         key: 'title',
         render: (record, text) => {
-          console.log(record, text)
+          // console.log(record, text)
 
           return <>
             <div style={{ color: '#4096ff' }}>{record} ({text.size})</div>
@@ -241,7 +242,7 @@ const Order: React.FC = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: reversed.map(i => new Date(i.time).toLocaleString())
+        data: reversed.map(i => moment(i.time).format("YYYY-MM-DD HH:mm:ss"))
       },
       yAxis: {
         type: 'value'
